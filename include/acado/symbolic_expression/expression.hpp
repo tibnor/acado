@@ -232,6 +232,8 @@ class Expression{
 	*/
         Matrix getDependencyPattern( const Expression& arg ) const;
 
+        Expression getSign   ( ) const;
+        Expression getAbs    ( ) const;
         Expression getSin    ( ) const;
         Expression getCos    ( ) const;
         Expression getTan    ( ) const;
