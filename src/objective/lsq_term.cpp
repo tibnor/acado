@@ -267,9 +267,13 @@ returnValue LSQTerm::evaluate( const OCPiterate &x ){
 		allValues( run1,0 ) = currentValue;
     }
 
-	Vector tmp(1);
-	allValues.getIntegral( IM_CONSTANT,tmp );
-	obj = tmp(0);
+	if (N > 1) {
+		Vector tmp(1);
+		allValues.getIntegral(IM_CONSTANT, tmp);
+		obj = tmp(0);
+	} else {
+		obj = allValues(0, 0);
+	}
 
     return SUCCESSFUL_RETURN;
 }
